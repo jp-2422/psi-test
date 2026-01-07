@@ -1,0 +1,22 @@
+name: psi-test 
+base: core24 
+version: '0.5' 
+summary: Testing use of psi notifications within snaps
+description: |
+  A test program to confirm that snaps have the required apparmor permissions by default to read psi information, and setup psi notifications.
+
+grade: stable 
+confinement: strict 
+
+platforms:
+  amd64:
+
+parts:
+  psi-test:
+    plugin: cmake
+    source: .
+ 
+apps:
+  psi-test:
+     command: usr/local/bin/psi-test
+
